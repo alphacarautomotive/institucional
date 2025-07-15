@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphacar Automotive - Sobre Nós</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #FFD700;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .slider-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider-wrapper img {
+      width: 100%;
+      flex-shrink: 0;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #FFD700;
+      border: none;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .slider-button.prev {
+      left: 10px;
+    }
+
+    .slider-button.next {
+      right: 10px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2 {
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border: 3px solid #fff;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      position: relative;
+      margin: 5% auto;
+      max-width: 90%;
+      max-height: 80vh;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #FFD700;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 50px;
+      color: #FFD700;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+    }
+
+    .links a {
+      color: #FFD700;
+      margin: 0 15px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .links img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#nosso-escritorio">Nosso Escritório</a>
+    <a href="#nossos-diferenciais">Nossos Diferenciais</a>
+    <a href="#nosso-estoque">Nosso Estoque</a>
+  </nav>
+
+  <div class="slider-container">
+    <button class="slider-button prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="slider-wrapper" id="slider">
+      <img src="logo-alphacar.png.jpg" alt="Logo Alphacar Automotive">
+      <img src="banner-estoque.jpg" alt="Banner Estoque">
+    </div>
+    <button class="slider-button next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+	<div class="container">
+	  <section class="section" id="quem-somos">
+		<h1>Quem Somos</h1>
+		<p>
+		  A <strong>Alphacar Automotive</strong> é uma loja especializada na venda de
+		  <strong>peças e acessórios automotivos</strong>, com foco total em peças para caminhões.
+		  Nossa missão é garantir que sua frota continue rodando com segurança, qualidade e eficiência.
+		</p>
+
+		<h2 style="margin-top: 40px;">Fale Conosco</h2>
+		<p>📍 <strong>Localização:</strong> Av. Exemplo, 123 - Cidade/Estado</p>
+		<p>📞 <strong>WhatsApp:</strong> (11) 99999-9999</p>
+		<p>📧 <strong>Email:</strong> contato@alphacar.com.br</p>
+
+		<h2 style="margin-top: 40px;">Conheça Nossos Canais</h2>
+		<div class="links">
+		  <a href="https://www.instagram.com/alphacarautomotiveof/" target="_blank">
+			<img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">Instagram
+		  </a>
+		  <a href="https://www.mercadolivre.com.br/pagina/.alphacar" target="_blank">
+			<img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.4.1/mercadolibre/logo__large_plus.png" alt="Mercado Livre">Mercado Livre
+		  </a>
+		</div>
+	  </section>
+
+    <section class="section" id="nosso-escritorio">
+      <h2>Nosso Escritório</h2>
+      <div class="gallery grid-3">
+        <img src="escritorio-1.jpg" alt="Escritório 1" onclick="openModal(0)">
+        <img src="escritorio-2.jpg" alt="Escritório 2" onclick="openModal(1)">
+        <img src="banner-estoque.jpg" alt="Escritório 3" onclick="openModal(2)">
+      </div>
+    </section>
+
+    <section class="section" id="nossos-diferenciais">
+      <h2>Nossos Diferenciais</h2>
+      <ul>
+        <li>✔ Estoque variado e atualizado</li>
+        <li>✔ Atendimento técnico especializado</li>
+        <li>✔ Enviamos para todo o Brasil</li>
+        <li>✔ Parcerias com oficinas e transportadoras</li>
+        <li>✔ Produtos das principais marcas: Scania, Volvo, Mercedes, VW e mais</li>
+      </ul>
+    </section>
+
+    <section class="section" id="nosso-estoque">
+      <h2>Nosso Estoque</h2>
+      <div class="gallery grid-2">
+        <img src="estoque-1.jpg" alt="Estoque 1" onclick="openModal(3)">
+        <img src="estoque-2.jpg" alt="Estoque 2" onclick="openModal(4)">
+      </div>
+    </section>
+  </div>
+
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="nav-arrow prev" onclick="prevImage(event)">&#10094;</span>
+    <div class="modal-content">
+      <img id="modalImg" src="" alt="Imagem Ampliada">
+    </div>
+    <span class="nav-arrow next" onclick="nextImage(event)">&#10095;</span>
+  </div>
+
+  <footer>
+    &copy; 2025 Alphacar Automotive. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const images = [
+      "escritorio-1.jpg",
+      "escritorio-2.jpg",
+      "banner-estoque.jpg",
+      "estoque-1.jpg",
+      "estoque-2.jpg"
+    ];
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      document.getElementById("modalImg").src = images[currentIndex];
+      document.getElementById("imageModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    function prevImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      document.getElementById("modalImg").src = images[currentIndex];
+    }
+
+    function nextImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById("modalImg").src = images[currentIndex];
+    }
+
+    let slideIndex = 0;
+    const slider = document.getElementById("slider");
+
+    function moveSlide(direction) {
+      const totalSlides = slider.children.length;
+      slideIndex = (slideIndex + direction + totalSlides) % totalSlides;
+      slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+  </script>
+</body>
+</html>
