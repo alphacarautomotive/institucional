@@ -1,323 +1,173 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alphacar Automotive - Sobre Nós</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      background-color: #0a0a0a;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    nav {
-      background-color: #111;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #FFD700;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .slider-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      height: 300px;
-    }
-
-    .slider-wrapper {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slider-wrapper img {
-      width: 100%;
-      flex-shrink: 0;
-      height: 300px;
-      object-fit: cover;
-    }
-
-    .slider-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #FFD700;
-      border: none;
-      font-size: 30px;
-      padding: 10px;
-      cursor: pointer;
-      z-index: 2;
-    }
-
-    .slider-button.prev {
-      left: 10px;
-    }
-
-    .slider-button.next {
-      right: 10px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    h1, h2 {
-      color: #FFD700;
-      margin-bottom: 20px;
-    }
-
-    .section {
-      margin-bottom: 50px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border: 3px solid #fff;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    .modal-content {
-      position: relative;
-      margin: 5% auto;
-      max-width: 90%;
-      max-height: 80vh;
-      text-align: center;
-    }
-
-    .modal-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: #FFD700;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .nav-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 50px;
-      color: #FFD700;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .prev {
-      left: 20px;
-    }
-
-    .next {
-      right: 20px;
-    }
-
-    footer {
-      background-color: #111;
-      text-align: center;
-      padding: 20px;
-      color: #ccc;
-    }
-
-    .links a {
-      color: #FFD700;
-      margin: 0 15px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .links img {
-      width: 20px;
-      height: 20px;
-      margin-right: 8px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphacar Automotive - Peças e Acessórios para Caminhões</title>
+    <!-- Inclui o Tailwind CSS via CDN para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter para todo o corpo do documento */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Cor de fundo suave para a página */
+            color: #333; /* Cor de texto padrão */
+        }
+        /* Cores personalizadas do Tailwind para combinar com a marca Alphacar */
+        .bg-alphacar-dark { background-color: #1a202c; } /* Azul escuro do logo */
+        .text-alphacar-red { color: #e53e3e; } /* Vermelho de destaque */
+        .border-alphacar-red { border-color: #e53e3e; }
+        .hover-alphacar-red:hover { background-color: #c53030; }
+    </style>
 </head>
-<body>
-  <nav>
-    <a href="#quem-somos">Quem Somos</a>
-    <a href="#nosso-escritorio">Nosso Escritório</a>
-    <a href="#nossos-diferenciais">Nossos Diferenciais</a>
-    <a href="#nosso-estoque">Nosso Estoque</a>
-  </nav>
+<body class="antialiased">
 
-  <div class="slider-container">
-    <button class="slider-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <div class="slider-wrapper" id="slider">
-      <img src="logo-alphacar.png.jpg" alt="Logo Alphacar Automotive">
-      <img src="banner-estoque.jpg" alt="Banner Estoque">
-    </div>
-    <button class="slider-button next" onclick="moveSlide(1)">&#10095;</button>
-  </div>
+    <!-- Seção do Cabeçalho/Hero -->
+    <header class="bg-alphacar-dark text-white py-16 px-4 md:px-8 lg:px-16 flex flex-col items-center justify-center text-center rounded-b-lg shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <!-- Logo da Alphacar Automotive -->
+            <img src="logo-alphacar.png.jpg" alt="Logo Alphacar Automotive" class="w-48 md:w-64 mx-auto mb-6 rounded-full shadow-md">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                Seu Caminhão Não Para.<br class="hidden md:inline"> Nós Garantimos.
+            </h1>
+            <p class="text-lg md:text-xl lg:text-2xl mb-8 opacity-90">
+                Peças e acessórios automotivos de alta qualidade para sua frota rodar com segurança, eficiência e sem interrupções.
+            </p>
+            <!-- Botão de Chamada para Ação (CTA) -->
+            <a href="#fale-conosco" class="bg-alphacar-red text-white font-semibold py-3 px-8 rounded-full text-lg hover:hover-alphacar-red transition duration-300 ease-in-out shadow-lg transform hover:scale-105">
+                Fale Conosco Agora!
+            </a>
+        </div>
+    </header>
 
-	<div class="container">
-	  <section class="section" id="quem-somos">
-		<h1>Quem Somos</h1>
-		<p>
-		  A <strong>Alphacar Automotive</strong> é uma loja especializada na venda de
-		  <strong>peças e acessórios automotivos</strong>, com foco total em peças para caminhões.
-		  Nossa missão é garantir que sua frota continue rodando com segurança, qualidade e eficiência.
-		</p>
-
-		<h2 style="margin-top: 40px;">Fale Conosco</h2>
-		<p>📍 <strong>Localização:</strong> Av. Exemplo, 123 - Cidade/Estado</p>
-		<p>📞 <strong>WhatsApp:</strong> (11) 99999-9999</p>
-		<p>📧 <strong>Email:</strong> contato@alphacar.com.br</p>
-
-		<h2 style="margin-top: 40px;">Conheça Nossos Canais</h2>
-		<div class="links">
-		  <a href="https://www.instagram.com/alphacarautomotiveof/" target="_blank">
-			<img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">Instagram
-		  </a>
-		  <a href="https://www.mercadolivre.com.br/pagina/.alphacar" target="_blank">
-			<img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.4.1/mercadolibre/logo__large_plus.png" alt="Mercado Livre">Mercado Livre
-		  </a>
-		</div>
-	  </section>
-
-    <section class="section" id="nosso-escritorio">
-      <h2>Nosso Escritório</h2>
-      <div class="gallery grid-3">
-        <img src="escritorio-1.jpg" alt="Escritório 1" onclick="openModal(0)">
-        <img src="escritorio-2.jpg" alt="Escritório 2" onclick="openModal(1)">
-        <img src="banner-estoque.jpg" alt="Escritório 3" onclick="openModal(2)">
-      </div>
+    <!-- Seção Quem Somos -->
+    <section id="quem-somos" class="py-16 px-4 md:px-8 lg:px-16 bg-white rounded-lg shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-alphacar-dark">Quem Somos</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                A <strong class="text-alphacar-dark">Alphacar Automotive</strong> é sua parceira especializada na venda de <strong class="text-alphacar-dark">peças e acessórios automotivos</strong>, com foco total em atender às necessidades de <strong class="text-alphacar-dark">caminhões</strong>. Nossa missão é garantir que sua frota continue rodando com segurança, qualidade e eficiência, oferecendo soluções completas para a manutenção e aprimoramento do seu veículo pesado.
+            </p>
+        </div>
     </section>
 
-    <section class="section" id="nossos-diferenciais">
-      <h2>Nossos Diferenciais</h2>
-      <ul>
-        <li>✔ Estoque variado e atualizado</li>
-        <li>✔ Atendimento técnico especializado</li>
-        <li>✔ Enviamos para todo o Brasil</li>
-        <li>✔ Parcerias com oficinas e transportadoras</li>
-        <li>✔ Produtos das principais marcas: Scania, Volvo, Mercedes, VW e mais</li>
-      </ul>
+    <!-- Seção Nossos Diferenciais -->
+    <section id="diferenciais" class="py-16 px-4 md:px-8 lg:px-16 bg-gray-100 rounded-lg shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-alphacar-dark">Nossos Diferenciais</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <!-- Item Diferencial 1 -->
+                <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+                    <span class="text-alphacar-red text-2xl mr-4">✔</span>
+                    <p class="text-lg text-gray-700">
+                        <strong class="font-semibold">Estoque Variado e Atualizado:</strong> Contamos com um vasto e moderno estoque de peças e acessórios, sempre prontos para atender às suas demandas com agilidade.
+                    </p>
+                </div>
+                <!-- Item Diferencial 2 -->
+                <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+                    <span class="text-alphacar-red text-2xl mr-4">✔</span>
+                    <p class="text-lg text-gray-700">
+                        <strong class="font-semibold">Atendimento Técnico Especializado:</strong> Nossa equipe está preparada para oferecer o suporte técnico que você precisa, ajudando a encontrar a solução ideal para cada situação.
+                    </p>
+                </div>
+                <!-- Item Diferencial 3 -->
+                <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+                    <span class="text-alphacar-red text-2xl mr-4">✔</span>
+                    <p class="text-lg text-gray-700">
+                        <strong class="font-semibold">Enviamos para Todo o Brasil:</strong> Não importa onde você esteja, a Alphacar Automotive entrega seus produtos com segurança e rapidez em qualquer canto do país.
+                    </p>
+                </div>
+                <!-- Item Diferencial 4 -->
+                <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+                    <span class="text-alphacar-red text-2xl mr-4">✔</span>
+                    <p class="text-lg text-gray-700">
+                        <strong class="font-semibold">Parcerias Estratégicas:</strong> Colaboramos com oficinas e transportadoras, garantindo um ecossistema completo de serviços para sua frota.
+                    </p>
+                </div>
+                <!-- Item Diferencial 5 -->
+                <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+                    <span class="text-alphacar-red text-2xl mr-4">✔</span>
+                    <p class="text-lg text-gray-700">
+                        <strong class="font-semibold">Produtos das Principais Marcas:</strong> Trabalhamos apenas com o que há de melhor no mercado: Scania, Volvo, Mercedes, VW e muitas outras marcas de renome.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="section" id="nosso-estoque">
-      <h2>Nosso Estoque</h2>
-      <div class="gallery grid-2">
-        <img src="estoque-1.jpg" alt="Estoque 1" onclick="openModal(3)">
-        <img src="estoque-2.jpg" alt="Estoque 2" onclick="openModal(4)">
-      </div>
+    <!-- Seção Nosso Escritório -->
+    <section id="escritorio" class="py-16 px-4 md:px-8 lg:px-16 bg-white rounded-lg shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-alphacar-dark">Nosso Escritório</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img src="escritorio-1.jpg" alt="Nosso Escritório - Imagem 1" class="w-full h-auto object-cover rounded-xl shadow-lg">
+                <img src="escritorio-2.jpg" alt="Nosso Escritório - Imagem 2" class="w-full h-auto object-cover rounded-xl shadow-lg">
+            </div>
+        </div>
     </section>
-  </div>
 
-  <div id="imageModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <span class="nav-arrow prev" onclick="prevImage(event)">&#10094;</span>
-    <div class="modal-content">
-      <img id="modalImg" src="" alt="Imagem Ampliada">
-    </div>
-    <span class="nav-arrow next" onclick="nextImage(event)">&#10095;</span>
-  </div>
+    <!-- Seção Nosso Estoque -->
+    <section id="estoque" class="py-16 px-4 md:px-8 lg:px-16 bg-gray-100 rounded-lg shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-alphacar-dark">Nosso Estoque</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img src="estoque-1.jpg" alt="Nosso Estoque - Imagem 1" class="w-full h-auto object-cover rounded-xl shadow-lg">
+                <img src="estoque-2.jpg" alt="Nosso Estoque - Imagem 2" class="w-full h-auto object-cover rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Alphacar Automotive. Todos os direitos reservados.
-  </footer>
+    <!-- Seção Fale Conosco -->
+    <section id="fale-conosco" class="py-16 px-4 md:px-8 lg:px-16 bg-alphacar-dark text-white rounded-lg shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Fale Conosco</h2>
+            <p class="text-lg mb-6 opacity-90">Pronto para otimizar sua frota? Entre em contato conosco!</p>
+            <div class="space-y-4 text-lg">
+                <p>
+                    <strong class="text-alphacar-red">Email:</strong> <a href="mailto:atendimento@alphacarautomotive.com.br" class="underline hover:text-gray-300">atendimento@alphacarautomotive.com.br</a>
+                </p>
+                <p>
+                    <strong class="text-alphacar-red">Endereço:</strong> Av. dos Autonomistas, 4803, Km 18, Osasco, SP
+                </p>
+                <p>
+                    <strong class="text-alphacar-red">CEP:</strong> 06194-050
+                </p>
+                <p>
+                    <strong class="text-alphacar-red">CNPJ:</strong> 37.666.398/0001-00
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    const images = [
-      "escritorio-1.jpg",
-      "escritorio-2.jpg",
-      "banner-estoque.jpg",
-      "estoque-1.jpg",
-      "estoque-2.jpg"
-    ];
-    let currentIndex = 0;
+    <!-- Seção Conheça Nossos Canais -->
+    <section id="canais" class="py-16 px-4 md:px-8 lg:px-16 bg-white rounded-lg shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-alphacar-dark">Conheça Nossos Canais</h2>
+            <p class="text-lg mb-6 text-gray-700">Siga-nos e fique por dentro das novidades, ofertas e dicas automotivas:</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                <a href="https://www.instagram.com/alphacarautomotiveof/" target="_blank" rel="noopener noreferrer" class="flex items-center bg-pink-600 text-white font-semibold py-3 px-6 rounded-full text-lg hover:bg-pink-700 transition duration-300 ease-in-out shadow-lg transform hover:scale-105">
+                    <!-- Ícone do Instagram (SVG simples ou de uma biblioteca de ícones se disponível) -->
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.008.843.006 1.48.17 2.04.355.627.217 1.129.521 1.569.95.44.429.743.941.95 1.569.185.56.349 1.197.355 2.04.006 1.013.008 1.367.008 3.797s-.002 2.784-.008 3.797c-.006.843-.17 1.48-.355 2.04-.217.627-.521 1.129-.95 1.569-.429.44-.941.743-1.569.95-.56.185-1.197.349-2.04.355-1.013.006-1.367.008-3.797.008s-2.784-.002-3.797-.008c-.843-.006-1.48-.17-2.04-.355-.627-.217-1.129-.521-1.569-.95-.44-.429-.743-.941-.95-1.569-.185-.56-.349-1.197-.355-2.04-.006-1.013-.008-1.367-.008-3.797s.002-2.784.008-3.797c.006-.843.17-1.48.355-2.04.217-.627.521-1.129.95-1.569.429-.44.941-.743 1.569-.95.56-.185 1.197-.349 2.04-.355C9.516 2.002 9.87 2 12.315 2zm0 2.15c-2.43 0-2.784.002-3.797.008-.843.006-1.07.07-1.39.185-.32.115-.59.283-.807.5-.217.217-.385.487-.5.807-.115.32-.18.547-.185 1.39-.006 1.013-.008 1.367-.008 3.797s.002 2.784.008 3.797c.006.843.07 1.07.185 1.39.115.32.283.59.5.807.217.217.487.385.807.5.32.115.547.18.807.185 1.013.006 1.367.008 3.797.008s2.784-.002 3.797-.008c.843-.006 1.07-.07 1.39-.185.32-.115.59-.283.807-.5.217-.217.385-.487.5-.807.115-.32.18-.547.185-1.39.006-1.013.008-1.367.008-3.797s-.002-2.784-.008-3.797c-.006-.843-.07-1.07-.185-1.39-.115-.32-.283-.59-.5-.807-.217-.217-.487-.385-.807-.5-.32-.115-.547-.18-.807-.185-1.013-.006-1.367-.008-3.797-.008zM12.315 6.84a5.155 5.155 0 100 10.31 5.155 5.155 0 000-10.31zM12.315 8.99a3.005 3.005 0 110 6.01 3.005 3.005 0 010-6.01zm5.4-.985a1.225 1.225 0 100 2.45 1.225 1.225 0 000-2.45z" clip-rule="evenodd" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://www.mercadolivre.com.br/pagina/.alphacar" target="_blank" rel="noopener noreferrer" class="flex items-center bg-blue-600 text-white font-semibold py-3 px-6 rounded-full text-lg hover:bg-blue-700 transition duration-300 ease-in-out shadow-lg transform hover:scale-105">
+                    <!-- Ícone do Mercado Livre (SVG simples ou de uma biblioteca de ícones se disponível) -->
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-2 5h4v2h-4V9zm0 4h4v2h-4v-2z"/>
+                    </svg>
+                    Mercado Livre
+                </a>
+            </div>
+        </div>
+    </section>
 
-    function openModal(index) {
-      currentIndex = index;
-      document.getElementById("modalImg").src = images[currentIndex];
-      document.getElementById("imageModal").style.display = "block";
-    }
+    <!-- Rodapé -->
+    <footer class="bg-alphacar-dark text-white py-8 px-4 md:px-8 lg:px-16 text-center mt-8 rounded-t-lg shadow-lg">
+        <p class="text-sm opacity-80">&copy; 2025 Alphacar Automotive. Todos os direitos reservados.</p>
+        <p class="text-xs opacity-70 mt-2">Desenvolvido com paixão para manter sua frota em movimento.</p>
+    </footer>
 
-    function closeModal() {
-      document.getElementById("imageModal").style.display = "none";
-    }
-
-    function prevImage(event) {
-      event.stopPropagation();
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      document.getElementById("modalImg").src = images[currentIndex];
-    }
-
-    function nextImage(event) {
-      event.stopPropagation();
-      currentIndex = (currentIndex + 1) % images.length;
-      document.getElementById("modalImg").src = images[currentIndex];
-    }
-
-    let slideIndex = 0;
-    const slider = document.getElementById("slider");
-
-    function moveSlide(direction) {
-      const totalSlides = slider.children.length;
-      slideIndex = (slideIndex + direction + totalSlides) % totalSlides;
-      slider.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
-  </script>
 </body>
 </html>
